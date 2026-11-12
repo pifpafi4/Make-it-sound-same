@@ -1,0 +1,31 @@
+[package]
+name = "make-it-sound-same"
+version = "0.1.0"
+edition = "2024"
+description = "Утилита контроля громкости приложений Windows: тихий старт для новых программ"
+
+[lib]
+name = "make_it_sound_same"
+path = "src/lib.rs"
+
+[[bin]]
+name = "miss"
+path = "src/main.rs"
+
+[profile.release]
+strip = true
+lto = "thin"
+
+[dependencies]
+anyhow = "1.0.104"
+dirs = "7.0.0"
+eframe = "0.32"
+serde = { version = "1.0.229", features = ["derive"] }
+thiserror = "2.0.21"
+toml = "1.2.1"
+tracing = "0.1.44"
+tracing-subscriber = { version = "0.3.23", features = ["env-filter"] }
+tray-icon = "0.26.1"
+windows = { version = "0.62", features = ["Win32_Media_Audio", "Win32_System_Com", "Win32_System_Threading", "Win32_Security", "Win32_Foundation", "Win32_UI_WindowsAndMessaging", "Win32_Media_Audio_Endpoints", "Win32_Devices_FunctionDiscovery", "Win32_UI_Shell", "Win32_System_Com_StructuredStorage", "Win32_UI_Shell_PropertiesSystem", "Win32_System_Variant", "Win32_System_Console", "Win32_Storage_FileSystem"] }
+windows-core = "0.62"
+winreg = "0.56.0"
