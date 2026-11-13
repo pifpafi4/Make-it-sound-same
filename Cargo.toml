@@ -3,6 +3,7 @@ name = "make-it-sound-same"
 version = "0.1.0"
 edition = "2024"
 description = "Утилита контроля громкости приложений Windows: тихий старт для новых программ"
+license = "MIT"
 
 [lib]
 name = "make_it_sound_same"
